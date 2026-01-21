@@ -1,0 +1,9 @@
+# https://github.com/fastlane/scan#scanfile
+
+workspace "TestApp.xcodeproj/project.xcworkspace"
+scheme "TestApp"
+sdk "macosx"
+destination "platform=macOS"
+code_coverage true
+xcargs "-parallelizeTargets"
+derived_data_path "Build/"
