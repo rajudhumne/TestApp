@@ -25,12 +25,9 @@ jobs:
           xcode-version: latest-stable
 
       - uses: ruby/setup-ruby@v1
-
-      - name: Install Bundler
-        run: gem install bundler
-
-      - name: Install gems
-        run: bundle install
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
 
       - name: Swift Packages Cache
         uses: actions/cache@v4
