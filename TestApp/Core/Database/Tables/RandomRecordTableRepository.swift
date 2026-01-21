@@ -78,10 +78,6 @@ final class RecordRepository: DatabaseRepository, Sendable {
             t.column(Columns.timestamp)
             t.column(Columns.isSynced, defaultValue: false)
             t.column(Columns.aiResponse)
-            
-            // Foreign Key: Links user_id to users.id
-            // 'delete: .cascade' means if User is deleted, their Records are also deleted
-            // This maintains referential integrity
             t.foreignKey(Columns.userId, references: usersTable, Expression<String>("id"), delete: .cascade)
         })
     }
